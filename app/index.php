@@ -1,6 +1,6 @@
 <?php
 // 1. กำหนดค่าการเชื่อมต่อฐานข้อมูลโดยดึงชื่อจาก .env [5]
-$host = 'pasithttp'; // แก้ไขให้ตรงกับค่าทีอยู่ใน Docker Compose หรือ .env
+$host = '11601'; // แก้ไขให้ตรงกับค่าทีอยู่ใน Docker Compose หรือ .env
 $user = 'root'; // แก้ไขให้ตรงกับค่าที่อยู่ใน Docker Compose หรือ .env
 $db   = 'pasitdb'; // แก้ไขให้ตรงกับค่าที่อยู่ใน Docker Compose หรือ .env
 

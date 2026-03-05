@@ -4,7 +4,7 @@ services:
   # 1. ฐานข้อมูล (Database)
   db-server:
     image: mariadb:10.6
-    container_name: ${MY_USERNAME}-db # (1.1) กำหนดชื่อคอนเทนเนอร์ให้สอดคล้องกับ .env [4]
+    container_name: pasit-db # (1.1) กำหนดชื่อคอนเทนเนอร์ให้สอดคล้องกับ .env [4]
     restart: always
     environment:
       MARIADB_DATABASE: ${DB_NAME} # (1.2) กำหนดชื่อฐานข้อมูลให้สอดคล้องกับ .env [4]
@@ -23,7 +23,7 @@ services:
     image: bitnami/php-fpm:latest
     container_name: ${MY_USERNAME}-php # (2.1) กำหนดชื่อคอนเทนเนอร์ให้สอดคล้องกับ .env [4]
     volumes:
-      - ./_______:/var/www/html # (2.2) เติมชื่อโฟลเดอร์ที่เก็บไฟล์โค้ดของ Backend
+      - ./html/:/var/www/html # (2.2) เติมชื่อโฟลเดอร์ที่เก็บไฟล์โค้ดของ Backend
     networks:
       - backend-zone
     ##secrets: # (2.3) ถ้าต้องการให้ Backend ใช้รหัสผ่านฐานข้อมูลจาก Secret ให้เปิดบรรทัดนี้และเติมชื่อ Secret ที่ประกาศด้านล่าง [10]
